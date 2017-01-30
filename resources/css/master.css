@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter'); /* Bitter font */
+
+@font-face {
+    font-family: 'Museo-700';
+    src:url('../fonts/museoCyrillic700/Museo-700.ttf.woff') format('woff'),
+        url('../fonts/museoCyrillic700/Museo-700.ttf.svg#Museo-700') format('svg'),
+        url('../fonts/museoCyrillic700/Museo-700.ttf.eot'),
+        url('../fonts/museoCyrillic700/Museo-700.ttf.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  font-family: 'Museo-700';
+}
+
+header {
+  font-size: 2.5em;
+  position: fixed;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+header .logo {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+header nav .navbarIcon {
+  display: inline-block;
+  font-size: 75%;
+}
+
+header nav #navoptions {
+  display: none;
+}
+
+section#s1 {
+  height: 100vh;
+  background: url('../imgs/section1.jpg') no-repeat 50% 50% / cover;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: 'Open Sans';
+  font-weight: 300;
+}
+
+.middle {
+  width: 80%;
+  max-width: 960px;
+}
+
+section#s1 > .middle {
+  text-align: center;
+}
+
+section#s1 > .middle .logo {
+  font-size: 4em;
+}
