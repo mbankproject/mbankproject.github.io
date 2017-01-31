@@ -60,7 +60,7 @@ header#header nav {
 }
 
 header#header nav.active {
-  background: #FFFFFF;
+  background: #FFFFFF !important;
   color: #323232;
   transition: all 0.3s;
 }
@@ -151,14 +151,40 @@ header#header nav .dropDown ul {
   margin: 0.8em 0;
 }
 
+header#header nav .dropDown ul li .wow {
+  width: 0%;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+header#header nav .dropDown ul li span {
+  position: relative;
+  z-index: 2138;
+}
+
+header#header nav .dropDown ul a:active li .wow {
+  z-index: 2137;
+  animation: wow 2s;
+}
+
+header#header nav .dropDown ul li .wow > .outer {
+  width: 100%;
+  padding-bottom: 100%;
+  background: #EE6E73;
+  border-radius: 100%;
+}
+
 header#header nav .dropDown ul li {
+  overflow: hidden;
   padding: 1em;
   transition: all 0.2s;
+  position: relative;
 }
 
 header#header nav .dropDown ul li:hover {
-  color: #FFFFFF;
-  background: #EE6E73;
+  background: #E6E6E6;
   transition: all 0.2s;
 }
 
@@ -182,9 +208,8 @@ header#header nav.dark .burger > div {
   background: #323232;
 }
 
-section#s1 {
+.fullImage {
   height: 100vh;
-  background: #752122  url('../imgs/section1.jpg') no-repeat fixed 50% 50% / cover;
   width: 100%;
   display: flex;
   align-items: center;
@@ -192,6 +217,14 @@ section#s1 {
   color: #FFFFFF;
   font-family: 'Open Sans';
   font-weight: 300;
+}
+
+section#s1 {
+  background: #752122  url('../imgs/section1.jpg') no-repeat fixed 50% 50% / cover;
+}
+
+section#s3 {
+  background: #752122  url('../imgs/section3.jpg') no-repeat fixed 50% 50% / cover;
 }
 
 .middle {
@@ -212,42 +245,57 @@ section#s1 > .middle .logo {
   font-size: 5em;
 }
 
-section:nth-of-type(n+1) {
-  padding: 4em 1em;
-  box-sizing: border-box;
-}
 
 section #s2 {
   position: relative;
   z-index: 1;
 }
 
-.deposits {
+body > section:nth-of-type(2n) {
+  padding: 2em 0;
+}
+
+.content {
+  padding: 0 1em;
+}
+
+.product {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.deposits > div {
+.product  > div {
   box-sizing: border-box;
-  border: 1px solid #323232;
+  border: 3px solid #323232;
   min-width: 20em;
   width: 22%;
   position: relative;
   margin: 1em 0;
   background: transparent url('../imgs/stock.jpg') no-repeat scroll 50% 50% / cover;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  opacity: 0.8;
+  transition: all 0.2s;
   cursor: pointer;
 }
 
-.deposits > div:before {
+.product  > div:hover {
+  opacity: 1;
+}
+
+.product  > div.active {
+  border-color: #EE6E73;
+  transition: all 0.2s;
+}
+
+.product  > div:before {
   display: block;
   content: '';
   width: 100%;
   padding-top: 100%;
 }
 
-.deposits > div > .inner {
+.product  > div > .inner {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -256,7 +304,7 @@ section #s2 {
   right: 0;
 }
 
-.deposits > div > .inner > .desc {
+.product  > div > .inner > .desc {
   position: absolute;
   box-sizing: border-box;
   top: 0;
@@ -266,7 +314,7 @@ section #s2 {
   color: #FFFFFF;
 }
 
-.deposits > div > .inner > .desc > header.title {
+.product  > div > .inner > .desc > header.title {
   position: absolute;
   bottom: 1em;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
@@ -274,23 +322,23 @@ section #s2 {
   font-size: 1.5em;
 }
 
-.deposits > div > .inner > .desc > .about {
+.product  > div > .inner > .desc > .about {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: all 0.2s;
+  transition: all 0.4s;
   background: rgba(238, 110, 115, 0.9);
 }
 
-.deposits > div:hover > .inner > .desc > .about {
+.product  > div:hover > .inner > .desc > .about {
   opacity: 1;
-  transition: all 0.2s;
+  transition: all 0.4s;
 }
 
-.deposits > div > .inner > .desc > .about > .circle {
+.product  > div > .inner > .desc > .about > .circle {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -301,19 +349,19 @@ section #s2 {
   background: #FFFFFF;
 }
 
-.deposits > div > .inner > .desc > .about > .description {
+.product  > div > .inner > .desc > .about > .description {
   position: absolute;
   left: 50%;
   top: 70%;
   transform: translate(-50%, 0);
 }
 
-.deposits > div > .inner > .desc > .about > .circle > .crosshair {
+.product  > div > .inner > .desc > .about > .circle > .crosshair {
   width: 100%;
   height: 100%;
 }
 
-.deposits > div > .inner > .desc > .about > .circle > .crosshair > div {
+.product  > div > .inner > .desc > .about > .circle > .crosshair > div {
   width: 80%;
   height: 15%;
   background: #ee6e73;
@@ -323,13 +371,74 @@ section #s2 {
   transform: translate(-50%, -50%);
 }
 
-.deposits > div > .inner > .desc > .about > .circle > .crosshair > div:last-of-type {
+.product  > div > .inner > .desc > .about > .circle > .crosshair > div:last-of-type {
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
 
-section#s2 h2 {
+.content h2 {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-size: 3em;
   font-weight: 300;
+}
+
+section >  .about {
+  background: #e0e0e0;
+  position: relative;
+  overflow: hidden;
+  transition: all 2s;
+}
+
+section > .about > section {
+  display: none;
+}
+
+section > .about > section.active {
+  display: block;
+}
+
+section > .about > .close {
+  position: absolute;
+  height: 1.25em;
+  width: 1.25em;
+  top: 0.5em;
+  right: 0.5em;
+}
+
+section > .about  > .close > div {
+  background: #323232;
+  width: 141%;
+  height: 20%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+section > .about  > .close > div:first-of-type {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+section > .about  > .close > div:last-of-type {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+@keyframes wow {
+  0% {
+    width: 10%;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6
+  }
+  50% {
+    width: 150%;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    width: 150%;
+  }
 }
