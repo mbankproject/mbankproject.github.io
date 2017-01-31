@@ -132,7 +132,7 @@ header#header nav .dropDown {
   position: fixed;
   height: 100vh;
   width: 100%;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.95);
   display: none;
   opacity: 0;
   transition: all 0.2s;
@@ -164,9 +164,9 @@ header#header nav .dropDown ul li span {
   z-index: 2138;
 }
 
-header#header nav .dropDown ul a:active li .wow {
+header#header nav .dropDown ul a.active li .wow {
   z-index: 2137;
-  animation: wow 2s;
+  animation: wow 1s;
 }
 
 header#header nav .dropDown ul li .wow > .outer {
@@ -391,6 +391,7 @@ section >  .about {
 
 section > .about > section {
   display: none;
+  padding: 3em 1em;
 }
 
 section > .about > section.active {
@@ -401,7 +402,7 @@ section > .about > .close {
   position: absolute;
   height: 1.25em;
   width: 1.25em;
-  top: 0.5em;
+  top: 3em;
   right: 0.5em;
 }
 
@@ -422,6 +423,16 @@ section > .about  > .close > div:last-of-type {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+footer {
+  background: #323232;
+  color: #FFFFFF;
+  box-sizing: border-box;
+  padding: 2em;
+}
+
+footer > p {
+  margin: 0;
+}
 
 @keyframes wow {
   0% {
