@@ -1,2 +1,7 @@
 
+.icon-dollar:before { content: '\e800'; } /* '' */
+.icon-calendar:before { content: '\e801'; } /* '' */
+.icon-money:before { content: '\e802'; } /* '' */
+.icon-attention-alt:before { content: '\e803'; } /* '' */
 .icon-menu:before { content: '\f0c9'; } /* '' */
+.icon-child:before { content: '\f1ae'; } /* '' */
