@@ -215,7 +215,7 @@ header#header nav.dark .burger > div {
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
-  font-family: 'Open Sans';
+  font-family: 'Roboto';
   font-weight: 300;
 }
 
@@ -238,7 +238,6 @@ section#s1 > .middle {
 
 section#s1 > .middle > p {
   font-size: 1.5em;
-  font-variant: small-caps;
 }
 
 section#s1 > .middle .logo {
@@ -317,7 +316,7 @@ body > section:nth-of-type(2n) {
 .product  > div > .inner > .desc > header.title {
   position: absolute;
   bottom: 1em;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-weight: 300;
   font-size: 1.5em;
 }
@@ -377,7 +376,7 @@ body > section:nth-of-type(2n) {
 
 
 .content h2 {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 3em;
   font-weight: 300;
 }
