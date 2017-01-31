@@ -16,7 +16,7 @@ body, html {
   color: #323232;
   background: #F8F8F8;
   z-index: 1;
-  font-family: 'Roboto';
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -33,15 +33,25 @@ header#header {
   position: fixed;
   width: 100%;
   color: #FFFFFF;
+  z-index: 2137;
 }
 
 
-header#header .logo {
+header#header nav .logo {
+  color: #323232;
   font-size: 2em;
   position: absolute;
   left: 2em;
   top: 50%;
   transform: translate(0, -50%);
+  display: none;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+header#header nav.active .logo {
+  display: block;
+  opacity: 1;
 }
 
 header#header nav {
@@ -115,6 +125,7 @@ header#header nav .dropDown {
   transition: all 0.3s cubic-bezier(.77,0,.18,1);
   overflow-y: scroll;
   overflow-x: hidden;
+  z-index: 2137;
 }
 
 .blackscreen {
@@ -125,6 +136,7 @@ header#header nav .dropDown {
   display: none;
   opacity: 0;
   transition: all 0.2s;
+  z-index: 2137;
 }
 
 .blackscreen.active {
@@ -155,8 +167,15 @@ header#header nav .dropDown.active {
   transition: all 0.3s cubic-bezier(.77,0,.18,1);
 }
 
+header#header nav.dark .logo {
+  display: block;
+  opacity: 1;
+  transition: all 0.3s;
+}
+
 header#header nav.dark {
-  color: #323232;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
 }
 
 header#header nav.dark .burger > div {
@@ -191,4 +210,126 @@ section#s1 > .middle > p {
 
 section#s1 > .middle .logo {
   font-size: 5em;
+}
+
+section:nth-of-type(n+1) {
+  padding: 4em 1em;
+  box-sizing: border-box;
+}
+
+section #s2 {
+  position: relative;
+  z-index: 1;
+}
+
+.deposits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.deposits > div {
+  box-sizing: border-box;
+  border: 1px solid #323232;
+  min-width: 20em;
+  width: 22%;
+  position: relative;
+  margin: 1em 0;
+  background: transparent url('../imgs/stock.jpg') no-repeat scroll 50% 50% / cover;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  cursor: pointer;
+}
+
+.deposits > div:before {
+  display: block;
+  content: '';
+  width: 100%;
+  padding-top: 100%;
+}
+
+.deposits > div > .inner {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.deposits > div > .inner > .desc {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: 1em;
+  color: #FFFFFF;
+}
+
+.deposits > div > .inner > .desc > header.title {
+  position: absolute;
+  bottom: 1em;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 1.5em;
+}
+
+.deposits > div > .inner > .desc > .about {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.2s;
+  background: rgba(238, 110, 115, 0.9);
+}
+
+.deposits > div:hover > .inner > .desc > .about {
+  opacity: 1;
+  transition: all 0.2s;
+}
+
+.deposits > div > .inner > .desc > .about > .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 30%;
+  width: 30%;
+  border-radius: 100%;
+  background: #FFFFFF;
+}
+
+.deposits > div > .inner > .desc > .about > .description {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, 0);
+}
+
+.deposits > div > .inner > .desc > .about > .circle > .crosshair {
+  width: 100%;
+  height: 100%;
+}
+
+.deposits > div > .inner > .desc > .about > .circle > .crosshair > div {
+  width: 80%;
+  height: 15%;
+  background: #ee6e73;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.deposits > div > .inner > .desc > .about > .circle > .crosshair > div:last-of-type {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+
+section#s2 h2 {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 3em;
+  font-weight: 300;
 }
