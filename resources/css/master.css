@@ -14,6 +14,7 @@ body, html {
   margin: 0;
   padding: 0;
   color: #323232;
+  background: #F8F8F8;
   z-index: 1;
   font-family: 'Roboto';
 }
@@ -154,9 +155,17 @@ header#header nav .dropDown.active {
   transition: all 0.3s cubic-bezier(.77,0,.18,1);
 }
 
+header#header nav.dark {
+  color: #323232;
+}
+
+header#header nav.dark .burger > div {
+  background: #323232;
+}
+
 section#s1 {
   height: 100vh;
-  background: url('../imgs/section1.jpg') no-repeat fixed 50% 50% / cover;
+  background: #752122  url('../imgs/section1.jpg') no-repeat fixed 50% 50% / cover;
   width: 100%;
   display: flex;
   align-items: center;
@@ -175,6 +184,11 @@ section#s1 > .middle {
   text-align: center;
 }
 
+section#s1 > .middle > p {
+  font-size: 1.5em;
+  font-variant: small-caps;
+}
+
 section#s1 > .middle .logo {
-  font-size: 4em;
+  font-size: 5em;
 }
