@@ -227,6 +227,10 @@ section#s3 {
   background: #752122  url('../imgs/section3.jpg') no-repeat fixed 50% 50% / cover;
 }
 
+section#s5 {
+  background: #752122  url('../imgs/section5.jpg') no-repeat fixed 50% 50% / cover;
+}
+
 .middle {
   width: 80%;
   max-width: 960px;
