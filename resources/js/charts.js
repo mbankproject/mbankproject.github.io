@@ -1,138 +1,62 @@
-
-window.addEventListener('load', function(event) {
-  var deposit_charts = new Array(4).fill(null).map(function(item, index) {
-    item = Highcharts.chart('deposit_chart'+(index+1), {
-      chart: {
-        type: 'line'
-      },
-      title: {
-        text: 'Oprocentowanie'
-      },
+var charts = [{
+    chart: null,
+    chartConfig: {
+      name: 'Lokata progres - wykres oprocentowania',
+      location: 'deposit_chart4',
+      title: {text: 'Lokata progres - wykres oprocentowania'},
       xAxis: {
-        title: {
-          text: 'Miesiąc'
-        }, labels: {
-          formatter: function() {
-            return this.value + '-miesiac'
-          }
-        }
+        title: {text: 'Miesiąc'},
+        labels: {formatter: function() {return this.value+'-miesiąc'}}
       },
-      yAxis: {
-        title: {
-          text: 'Oprocentowanie'
-        }, labels: {
-          formatter: function() {
-            return this.value + ' %'
-          }
-        }
+      yAxis:{
+        title: {text: 'Oprocentowanie'},
+        labels: {formatter: function() {return this.value+'%'}}
       },
-      series:[{
-        name: 'jan',
-        data: new Array(20).fill(0).map(function(item, index) {
-          return parseInt(Math.sin(index/1.25)*100)/100;
-        }),
+      tooltip: {
+        shared: true,
+        crosshairs: true
+      },
+      series: [{
+        name: '3-miesięczna',
+        data: [0, 0.2, 0.4, 1.5]
       }, {
-        name: 'dzban',
-        data: new Array(20).fill(0).map(function(item, index) {
-          return parseInt(Math.cos(index/1.25)*100)/100;
-        }),
+        name: '6-miesięczna',
+        data: [0, 0.1, 0.2, 0.3, 0.5, 0.6, 2.5]
       }, {
-        name: 'huligan',
-        data: new Array(20).fill(0).map(function(item, index) {
-          return parseInt((Math.random()*2-1)*100)/100;
-        }),
+        name: '12-miesięczna',
+        data: [0, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1, 1.2, 1.3, 2, 3]
       }]
-    });
-  });
+    }
+}];
 
 
-  var loan_charts = new Array(4).fill(null).map(function(item, index) {
-    item = Highcharts.chart('loan_chart'+(index+1), {
-      chart: {
-        type: 'line'
-      },
-      title: {
-        text: 'Oprocentowanie'
-      },
-      xAxis: {
-        title: {
-          text: 'Miesiąc'
-        }, labels: {
-          formatter: function() {
-            return this.value + '-miesiac'
-          }
-        }
-      },
-      yAxis: {
-        title: {
-          text: 'Oprocentowanie'
-        }, labels: {
-          formatter: function() {
-            return this.value + ' %'
-          }
-        }
-      },
-      series:[{
-        name: 'jan',
-        data: new Array(20).fill(0).map(function(item, index) {
-          return parseInt((Math.random()*Math.sin(index+1)*2-1)*100)/100;
-        }),
-      }, {
-        name: 'dzban',
-        data: new Array(20).fill(0).map(function(item, index) {
-          return parseInt((Math.random()*Math.sin(index+1)*2-1)*100)/100;
-        }),
-      }, {
-        name: 'huligan',
-        data: new Array(20).fill(0).map(function(item, index) {
-          return parseInt((Math.random()*Math.sin(index+1)*2-1)*100)/100;
-        }),
-      }]
-    });
-  });
+function concatObjects() {
+  var _ = {};
+  for(var o of arguments) {
+    for(var p in o) {
+      _[p] = o[p];
+    }
+  }
+  return _;
+}
 
-  var other_charts = new Array(4).fill(null).map(function(item, index) {
-    item = Highcharts.chart('other_chart'+(index+1), {
-      chart: {
-        type: 'line'
-      },
-      title: {
-        text: 'Oprocentowanie'
-      },
-      xAxis: {
-        title: {
-          text: 'Miesiąc'
-        }, labels: {
-          formatter: function() {
-            return this.value + '-miesiac'
-          }
-        }
-      },
-      yAxis: {
-        title: {
-          text: 'Oprocentowanie'
-        }, labels: {
-          formatter: function() {
-            return this.value + ' %'
-          }
-        }
-      },
-      series:[{
-        name: 'jan',
-        data: new Array(20).fill(0).map(function(item, index) {
-          return Math.cos(Math.sin(Math.random()*Math.random()));
-        }),
-      }, {
-        name: 'dzban',
-        data: new Array(20).fill(0).map(function(item, index) {
-          return Math.cos(Math.sin(Math.random()*Math.random()));
-        }),
-      }, {
-        name: 'huligan',
-        data: new Array(20).fill(0).map(function(item, index) {
-          return Math.cos(Math.sin(Math.random()*Math.random()));
-        }),
-      }]
-    });
+function createChart(location, additionalOptions = {}) {
+  var options = concatObjects({
+    chart: {type: 'line'},
+    title: {text: 'Wykres zależności'},
+    xAxis: {
+      title: {text: 'x'}
+    },
+    yAxis: {
+      title: {text: 'y'}
+    },
+    series: [{name: 'seria1', data: [0.1, 0.4, 0.9, 1.6]}]
+  }, additionalOptions);
+  return Highcharts.chart(location, options);
+}
+
+window.addEventListener('load', function() {
+  charts.map(function(chart) {
+    chart.chart = createChart(chart.chartConfig.location, chart.chartConfig);
   });
 });

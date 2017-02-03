@@ -145,6 +145,13 @@ header#header nav .dropDown {
   transition: all 0.2s;
 }
 
+header#header nav .logo > span {
+  position: absolute;
+  top: 62%;
+  left: 90%;
+  font-size: 50%;
+}
+
 header#header nav .dropDown ul {
   list-style: none;
   padding: 0;
@@ -513,28 +520,47 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
+  font-size: 90%;
+  text-align: left;
 }
 
 table td, table th {
-  padding: 15px 5px;
+  padding: 15px 4px;
   display: table-cell;
-  text-align: left;
   vertical-align: middle;
 }
 
-table > tbody > tr {
+table.center {
+  text-align: center;
+}
+
+table.border td {
+  border-top: 1px solid #d0d0d0;
+  border-right: 1px solid #d0d0d0;
+}
+
+table.border td:last-of-type {
+  border-right: none;
+}
+
+
+table.hover > tbody > tr {
   transition: all 0.25s ease;
 }
 
-table > tbody > tr:hover {
+table.hover > tbody > tr:hover {
   background: rgba(0, 0, 0, 0.1);
   transition: all 0.25s ease;
 }
 
 table > thead > tr:last-of-type {
-  border-bottom: 1px solid #d0d0d0;
   font-weight: bold;
 }
+table > tbody > tr:first-of-type {
+  border-top: 1px solid #d0d0d0;
+}
+
+
 
 @keyframes wow {
   0% {
