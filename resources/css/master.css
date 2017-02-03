@@ -282,7 +282,7 @@ body > section:nth-of-type(2n) {
   width: 22%;
   position: relative;
   margin: 1em 0;
-  background: transparent url('../imgs/stock.jpg') no-repeat scroll 50% 50% / cover;
+  background: #323232 url('') no-repeat scroll 50% 50% / cover;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   opacity: 0.8;
   transition: all 0.2s;
@@ -459,10 +459,56 @@ section.products > .about section p {
 }
 
 section.products > .about section > .background {
-  background: #323232 url('../imgs/deposits/1.jpg') no-repeat scroll 50% 80% / cover;
+  background: #323232 url('') no-repeat scroll 50% 80% / cover;
   height: 300px;
   position: relative;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+/* Background configs */
+/* deposits */
+section.products.deposits > .content > .product > div:nth-of-type(1), section.products.deposits > .about section:nth-of-type(1) > .background {
+  background-image: url('../imgs/deposits/1.jpg');
+}
+
+section.products.deposits > .content > .product > div:nth-of-type(2), section.products.deposits > .about section:nth-of-type(2) > .background {
+  background-image: url('../imgs/deposits/2.jpg');
+}
+
+section.products.deposits > .content > .product > div:nth-of-type(3), section.products.deposits > .about section:nth-of-type(3) > .background {
+  background-image: url('../imgs/deposits/3.jpg');
+}
+
+section.products.deposits > .content > .product > div:nth-of-type(4), section.products.deposits > .about section:nth-of-type(4) > .background {
+  background-image: url('../imgs/deposits/4.jpg');
+}
+
+/* loans*/
+section.products.loans > .content > .product > div:nth-of-type(1), section.products.loans > .about section:nth-of-type(1) > .background {
+  background-image: url('../imgs/loans/1.jpg');
+}
+
+section.products.loans > .content > .product > div:nth-of-type(2), section.products.loans > .about section:nth-of-type(2) > .background {
+  background-image: url('../imgs/loans/2.jpg');
+}
+
+section.products.loans > .content > .product > div:nth-of-type(3), section.products.loans > .about section:nth-of-type(3) > .background {
+  background-image: url('../imgs/loans/3.jpg');
+}
+
+section.products.loans > .content > .product > div:nth-of-type(4), section.products.loans > .about section:nth-of-type(4) > .background {
+  background-image: url('../imgs/loans/4.jpg');
+}
+/* others */
+section.products.others > .content > .product > div:nth-of-type(1), section.products.others > .about section:nth-of-type(1) > .background {
+  background-image: url('../imgs/others/1.jpg');
+}
+
+section.products.others > .content > .product > div:nth-of-type(2), section.products.others > .about section:nth-of-type(2) > .background {
+  background-image: url('../imgs/others/2.jpg');
+}
+
+section.products.others > .content > .product > div:nth-of-type(3), section.products.others > .about section:nth-of-type(3) > .background {
+  background-image: url('../imgs/others/3.jpg');
 }
 
 section.products > .about > section > .description {
