@@ -91,4 +91,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+  Array.from($('.calc input[type=range]')).map(function(input) {
+    input.addEventListener('input', function(event) {
+      event.target.nextSibling.nextSibling.innerHTML = event.target.value;
+    });
+  })
 });

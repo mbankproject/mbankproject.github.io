@@ -627,3 +627,119 @@ table > tbody > tr:first-of-type {
     width: 150%;
   }
 }
+
+
+input[type=range] {
+  background: transparent;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type=range]::-webkit-slider-runnable-track {
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #ee6e73;
+    margin-top: -6px;
+}
+
+input[type=range]:focus, select, select:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+input[type=range]::-moz-range-track {
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #ee6e73;
+}
+
+/*hide the outline behind the border*/
+input[type=range]::-moz-focus-outer {
+    border: 0;
+}
+
+input[type=range]:focus::-moz-range-track {
+    background: #ccc;
+}
+
+.calc > fieldset  label > input[type=range] + div {
+  display: inline-block;
+  border: 2px solid #ee6e73;
+  padding: 5px 15px;
+}
+
+.calc > fieldset  label > input[type=select] + div {
+  display: none;
+}
+
+.calc > fieldset > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+}
+
+.calc > fieldset  label {
+  width: 33%;
+  min-width: 18em;
+  box-sizing: border-box;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+input[disabled], input[disabled] + div {
+  opacity: 0.5;
+}
+
+select {
+  border: 2px solid #ee6e73;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px 15px;
+  font: inherit;
+}
+
+.calc > fieldset label > select + div {
+  display: none;
+}
+
+.calc button {
+  margin: 0 auto;
+  display: block;
+}
