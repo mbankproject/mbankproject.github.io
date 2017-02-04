@@ -558,7 +558,7 @@ section.products > .about > section > .description {
 .chart {
   box-sizing: border-box;
   width: 90vw;
-  height: 50vw;
+  height: 75vh;
   margin: 0 auto;
 }
 
