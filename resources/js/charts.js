@@ -1,8 +1,45 @@
 var charts = [{
+    chartConfig: {
+      name: 'Lokata progres - wykres oprocentowania',
+      location: 'progressInterest',
+      title: {text: 'Lokata progres - wykres oprocentowania'},
+      xAxis: {
+        title: {text: 'Miesiąc'},
+        labels: {formatter: function() {return this.value+'-miesiąc'}}
+      },
+      yAxis:{
+        title: {text: 'Oprocentowanie'},
+        labels: {formatter: function() {return this.value+'%'}}
+      },
+      tooltip: {
+        shared: true,
+        crosshairs: true
+      },
+      series: [{
+        name: '3-miesięczna - oprocentowanie nominalne',
+        data: [0, 0.2, 0.4, 1.5]
+      }, {
+        name: '3-miesięczna - oprocentowanie rzeczywiste',
+        data: [0, 0.017, 0.034, 0.125]
+      }, {
+        name: '6-miesięczna - oprocentowanie nominalne',
+        data: [0, 0.1, 0.2, 0.3, 0.5, 0.6, 2.5]
+      }, {
+        name: '6-miesięczna - oprocentowanie rzeczywiste',
+        data: [0, 0.008, 0.017, 0.025, 0.042, 0.05, 0.21]
+      }, {
+        name: '12-miesięczna - oprocentowanie nominalne',
+        data: [0, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1, 1.2, 1.3, 2, 3]
+      }, {
+        name: '12-miesięczna - oprocentowanie rzeczywiste',
+        data: [0, 0.017, 0.025, 0.034, 0.042, 0.05, 0.059, 0.067, 0.083, 0.1, 0.11, 0.167, 0.25]
+      }]
+    }
+  },{
     chart: null,
     calc: {
       chart: null,
-      legend: 'Super legenda',
+      legend: 'Wybierz odpowiednie opcje',
       elementID: 'progressive',
       seriesCount: 0,
       currentSeries: [],
@@ -53,8 +90,9 @@ var charts = [{
         type: 'range',
         attribs: {
           min: 0,
-          step: 1000,
-          max: 100000
+          step: 0.01,
+          max: 10000,
+          value: 2137
         }
       }, {
         name: 'capitalizationTime',
@@ -88,7 +126,7 @@ var charts = [{
         crosshairs: true
       },
       series: [{
-        name: '3-miesięczna',
+        name: 'Aktualna',
         data: [0, 0.2, 0.4, 1.5]
       }]
     }

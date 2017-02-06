@@ -511,6 +511,10 @@ section.products.others > .content > .product > div:nth-of-type(3), section.prod
   background-image: url('../imgs/others/3.jpg');
 }
 
+section.products.others > .content > .product > div:nth-of-type(4), section.products.others > .about section:nth-of-type(4) > .background {
+  background-image: url('../imgs/others/4.jpg');
+}
+
 section.products > .about > section > .description {
   padding: 1.5em 1em;
 }
