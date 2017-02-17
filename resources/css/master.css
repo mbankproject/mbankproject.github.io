@@ -689,13 +689,15 @@ input[type=range]:focus::-moz-range-track {
     background: #ccc;
 }
 
-.calc > fieldset  label > input[type=range] + div {
+.calc > fieldset  label > input[type=range] + input {
   display: inline-block;
   border: 2px solid #ee6e73;
   padding: 5px 15px;
+  width: 15%;
+  text-align: center;
 }
 
-.calc > fieldset  label > input[type=select] + div {
+.calc > fieldset  label > select + input {
   display: none;
 }
 

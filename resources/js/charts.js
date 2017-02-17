@@ -52,8 +52,8 @@ var charts = [{
         this.chart.redraw();
         this.seriesCount++;
       },
-      callback: function(event) {
-        event.target.nextSibling.textContent = event.target.value;
+      callback: function(event, other) {
+        other.value=event.target.value;
         var options = this.predefined;
         var interest = {
           '3': [0.002, 0.004, 0.015],
@@ -89,7 +89,7 @@ var charts = [{
         title: 'Kapitał początkowy',
         type: 'range',
         attribs: {
-          min: 0,
+          min: 500,
           step: 0.01,
           max: 10000,
           value: 2137
@@ -99,9 +99,7 @@ var charts = [{
         title: 'Czas kapitalizacji',
         type: 'range',
         attribs: {
-          min: 1,
-          step: 1,
-          max: 1,
+          value: 1,
           disabled: ''
         }
       }],
@@ -248,21 +246,23 @@ function initializeCharts(config) {
         inputConfig.element = document.createElement('input');
         inputConfig.element.setAttribute('type', inputConfig.type);
       }
+      var valueDiv = document.createElement('input');
+      valueDiv.id = config.calc.elementID+'_'+inputConfig.name+'Value';
+      valueDiv.value = inputConfig.element.value;
       if(inputConfig.hasOwnProperty('attribs')) {
         for(attribName in inputConfig.attribs) {
           inputConfig.element.setAttribute(attribName, inputConfig.attribs[attribName]);
+          valueDiv.setAttribute(attribName, inputConfig.attribs[attribName]);
         }
       }
       inputConfig.element.setAttribute('name', config.calc.elementID+'_'+inputConfig.name);
       label.appendChild(inputConfig.element);
-      inputConfig.element.addEventListener('input', function(event) {
-        config.calc.callback(event);
-      });
-      var valueDiv = document.createElement('div');
-      valueDiv.id = config.calc.elementID+'_'+inputConfig.name+'Value';
-      valueDiv.innerHTML = inputConfig.element.value;
       label.appendChild(valueDiv);
-
+      [inputConfig.element, valueDiv].map(function(item) {
+        item.addEventListener('input', function(event) {
+          config.calc.callback(event, event.target.getAttribute('type')==='range'?valueDiv:inputConfig.element);
+        });
+      });
     })
       fieldset.appendChild(addSeriesButton);
   } else {
