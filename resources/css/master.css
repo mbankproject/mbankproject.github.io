@@ -610,6 +610,47 @@ table > tbody > tr:first-of-type {
   border-top: 1px solid #d0d0d0;
 }
 
+table td.bad {
+  background: #ffcdd2;
+}
+
+table td.good {
+  background: #c8e6c9;
+}
+
+.images {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+}
+
+.images > img {
+  min-width: 18em;
+  max-height: 90vh;
+  width: 22%;
+  border: 2px solid #323232;
+  margin: 1em auto;
+}
+
+table td.good .triangle {
+    border-color: transparent transparent #2e7d32 transparent;
+}
+
+table td.bad .triangle {
+    border-width: 26.0px 15px 0 15px;
+    border-color: #c62828 transparent  transparent;
+}
+
+table td .triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 26.0px 15px;
+  border-color: transparent transparent #007bff transparent;
+  margin: 0 auto;
+}
 
 
 @keyframes wow {
