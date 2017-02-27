@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="resources/css/master.css">
   <link rel="stylesheet" href="resources/fontello/css/fontello.css">
+  <link rel="stylesheet" href="resources/css/tip.css">
   <script src="resources/js/main.js" charset="utf-8"></script>
   <script src="resources/js/highcharts/code/highcharts.src.js" charset="utf-8"></script>
   <script src="resources/js/charts.js" charset="utf-8"></script>
@@ -886,7 +887,7 @@
                 </div>
               </div>
               <h3>Dodatkowe opłaty</h3>
-              <table class="border">
+              <table class="border center">
                 <thead>
                   <tr>
                     <th>Nazwa opłaty</th>
@@ -907,7 +908,7 @@
                     <td>0zł</td>
                   </tr>
                   <tr>
-                    <td>Opłata za udzielenie karencji</td>
+                    <td>Opłata za udzielenie <span class="tooltip"><span class="name">karencji</span><span class="description">Jest to okres spłaty kredytu, podczas którego kredytobiorca spłaca jedynie odsetki od swojego zobowiązania.</span></span></td>
                     <td>0zł</td>
                   </tr>
                   <tr>
@@ -919,11 +920,11 @@
                     <td>70zł</td>
                   </tr>
                   <tr>
-                    <td>Opłata za sporządzenie aneksu</td>
+                    <td>Opłata za sporządzenie <span class="tooltip"><span class="name">aneksu</span><span class="description">Zmiana warunków umowy dokonana w formie pisemnej. Aneks podpisywany jest w przypadkach, gdy Kredytobiorca np. zmienia walutę kredytu, dokonuje wcześniejszej spłaty.</span></span></td>
                     <td>50zł</td>
                   </tr>
                   <tr>
-                    <td>Opłata za realizację dyspozycji kredytobiorcy zmieniającej parametry kredytu lub warunki umowy nie wymagającej sporządzenia aneksu</td>
+                    <td>Opłata za realizację dyspozycji kredytobiorcy zmieniającej parametry kredytu lub warunki umowy nie wymagającej sporządzenia <span class="tooltip"><span class="name">aneksu</span><span class="description">Zmiana warunków umowy dokonana w formie pisemnej. Aneks podpisywany jest w przypadkach, gdy Kredytobiorca np. zmienia walutę kredytu, dokonuje wcześniejszej spłaty.</span></span></td>
                     <td>50zł</td>
                   </tr>
                   <tr>
@@ -1095,11 +1096,11 @@
                     <td>od 12,99% do 14,99% całkowitej kwoty kredytu</td>
                   </tr>
                   <tr>
-                    <td>Opłata za udzielenie karencji</td>
+                    <td>Opłata za udzielenie <span class="tooltip"><span class="name">karencji</span><span class="description">Jest to okres spłaty kredytu, podczas którego kredytobiorca spłaca jedynie odsetki od swojego zobowiązania.</span></span></td>
                     <td> 0zł</td>
                   </tr>
                   <tr>
-                    <td>Opłata za sporządzenie aneksu do umowy o kredyt</td>
+                    <td>Opłata za sporządzenie <span class="tooltip"><span class="name">aneksu</span><span class="description">Zmiana warunków umowy dokonana w formie pisemnej. Aneks podpisywany jest w przypadkach, gdy Kredytobiorca np. zmienia walutę kredytu, dokonuje wcześniejszej spłaty.</span></span> do umowy o kredyt</td>
                     <td>0zł</td>
                   </tr>
                   <tr>
@@ -1111,7 +1112,7 @@
                     <td>0zł</td>
                   </tr>
                   <tr>
-                    <td>Opłata za zmianę warunków umowy niewymagającej sporządzenia aneksu</td>
+                    <td>Opłata za zmianę warunków umowy niewymagającej sporządzenia <span class="tooltip"><span class="name">aneksu</span><span class="description">Zmiana warunków umowy dokonana w formie pisemnej. Aneks podpisywany jest w przypadkach, gdy Kredytobiorca np. zmienia walutę kredytu, dokonuje wcześniejszej spłaty.</span></span></td>
                     <td>0zł</td>
                   </tr>
                 </tbody>
@@ -1134,7 +1135,7 @@
                 <div class="box">
                   <div class="icon"><i class="icon-percent"></i></div>
                   <div class="content">
-                    <div class="title">RRSO 23,16% dla przykładu ponirzej </div>
+                    <div class="title">RRSO 23,16% dla przykładu poniżej </div>
                     <div class="description">10% Oprocentowanie nominalne </div>
                   </div>
                 </div>
@@ -1167,9 +1168,8 @@
                   <li>zmianą (skróceniem) pierwotnego okresu spłaty pożyczki.</li>
                 </ul>
               W przypadku wcześniejszej całkowitej spłaty Pożyczki Bank pobiera odsetki za okres wykorzystania Pożyczki, tj. do dnia poprzedzającego wcześniejszą całkowitą spłatę. Dokonanie wcześniejszej spłaty całej kwoty Pożyczki wraz z odsetkami, skutkuje rozwiązaniem Umowy Pożyczki z dniem tej spłaty.</p>
-              <table>
+              <table class="border center">
                 <thead>
-                  Tabela opłat
                   <tr>
                     <th>Rodzaj czynności</th>
                     <th>Opłaty/prowizje</th>
@@ -1177,72 +1177,75 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>1. Opłata za rozpatrzenie wniosku kredytowego</td>
+                    <td>Opłata za rozpatrzenie wniosku kredytowego</td>
                     <td>0 zł</td>
                   </tr>
                   <tr>
-                    <td>2. Prowizja za udzielenie kredytu</td>
+                    <td>Prowizja za udzielenie kredytu</td>
                     <td>Od 0% do 5% kwoty kredytu</td>
                   </tr>
                   <tr>
-                    <td>3. Opłata za wcześniejszą spłatę kredytu</td>
+                    <td>Opłata za wcześniejszą spłatę kredytu</td>
                     <td>0 zł</td>
                   </tr>
                   <tr>
-                    <td>4. Opłata za udzielenie karencji </td>
+                    <td>Opłata za udzielenie <span class="tooltip"><span class="name">karencji</span><span class="description">Jest to okres spłaty kredytu, podczas którego kredytobiorca spłaca jedynie odsetki od swojego zobowiązania.</span></span></td>
                     <td>70 zł</td>
                   </tr>
                   <tr>
-                    <td>5. Opłata za sporządzenie Aneksu do Umowy o kredyt </td>
+                    <td>Opłata za sporządzenie <span class="tooltip"><span class="name">aneksu</span><span class="description">Zmiana warunków umowy dokonana w formie pisemnej. Aneks podpisywany jest w przypadkach, gdy Kredytobiorca np. zmienia walutę kredytu, dokonuje wcześniejszej spłaty.</span></span> do Umowy o kredyt </td>
                     <td>50 zł </td>
                   </tr>
                   <tr>
-                    <td>6. Opłata za realizację dyspozycji kredytobiorcy zmieniającej parametry kredytu lub warunki umowy nie wymagającej sporządzenia aneksu </td>
+                    <td>Opłata za realizację dyspozycji kredytobiorcy zmieniającej parametry kredytu lub warunki umowy nie wymagającej sporządzenia<span class="tooltip"><span class="name">aneksu</span><span class="description">Zmiana warunków umowy dokonana w formie pisemnej. Aneks podpisywany jest w przypadkach, gdy Kredytobiorca np. zmienia walutę kredytu, dokonuje wcześniejszej spłaty.</span></span></td>
                     <td>50 zł</td>
                   </tr>
                   <tr>
-                    <td>7. Ubezpieczenie spłaty kredytu - dotyczy przystąpienia do ubezpieczenia w chwili składania wniosku kredytowego </td>
-                  </tr>
-                  <tr>
-                    <td>a) Pakiet Standard </td>
-                    <td>0,096% * liczba miesięcy kredytu * łączna kwota kredytu</td>
-                  </tr>
-                  <tr>
-                    <td>b) Pakiet Komfort </td>
-                    <td>0,144% * liczba miesięcy kredytu * łączna kwota kredytu </td>
-                  </tr>
-                  <tr>
-                    <td>c) Pakiet Prestiż</td>
-                    <td>0,202% * liczba miesięcy kredytu * łączna kwota kredytu </td>
-                  </tr>
-                  <tr>
-                    <td>8. Ubezpieczenie spłaty kredytu - dotyczy przystąpienia do ubezpieczenia w chwili składania wniosku kredytowego </td>
-                  </tr>
-                  <tr>
-                    <td>a) Pakiet Standard </td>
-                    <td>4,3% miesięcznie od raty kredytu </td>
-                  </tr>
-                  <tr>
-                    <td>b) Pakiet Komfort </td>
-                    <td>6,5% miesięcznie od raty kredytu </td>
-                  </tr>
-                  <tr>
-                    <td>c) Pakiet Prestiż </td>
-                    <td>8,7% miesięcznie od raty kredytu </td>
-                  </tr>
-                  <tr>
+                    <td>Ubezpieczenie spłaty kredytu - dotyczy przystąpienia do ubezpieczenia w chwili składania wniosku kredytowego </td>
                     <td>
-                      <ul>
-                        <li>Oferta sprzedaży produktu wstrzymana od dnia 02.06.2014 r. do odwołania</li>
-                        <li>Produkt będzie dostępny w ofercie mBanku po wcześniejszym zakomunikowaniu daty rozpoczęcia sprzedaży na stronach internetowych mBanku.</li>
-                        <li>Łączna kwota kredytu to przyznana kwota kredytu uwzględniająca kredytowaną opłatę z tytułu ubezpieczenia</li>
-                      <ul>
+                      <table>
+                        <tr>
+                          <td>Pakiet Standard </td>
+                          <td>0,096% * liczba miesięcy kredytu * łączna kwota kredytu</td>
+                        </tr>
+                        <tr>
+                          <td>Pakiet Komfort </td>
+                          <td>0,144% * liczba miesięcy kredytu * łączna kwota kredytu </td>
+                        </tr>
+                        <tr>
+                          <td>Pakiet Prestiż</td>
+                          <td>0,202% * liczba miesięcy kredytu * łączna kwota kredytu </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Ubezpieczenie spłaty kredytu - dotyczy przystąpienia do ubezpieczenia w chwili składania wniosku kredytowego </td>
                     <td>
+                      <table>
+                        <tr>
+                          <td>Pakiet Standard </td>
+                          <td>4,3% miesięcznie od raty kredytu </td>
+                        </tr>
+                        <tr>
+                          <td>Pakiet Komfort </td>
+                          <td>6,5% miesięcznie od raty kredytu </td>
+                        </tr>
+                        <tr>
+                          <td>Pakiet Prestiż </td>
+                          <td>8,7% miesięcznie od raty kredytu </td>
+                        </tr>
+                      </table>
+                    </td>
                   </tr>
                 </tbody>
               </table>
+              <ul>
+                <li>Oferta sprzedaży produktu wstrzymana od dnia 02.06.2014 r. do odwołania</li>
+                <li>Produkt będzie dostępny w ofercie mBanku po wcześniejszym zakomunikowaniu daty rozpoczęcia sprzedaży na stronach internetowych mBanku.</li>
+                <li>Łączna kwota kredytu to przyznana kwota kredytu uwzględniająca kredytowaną opłatę z tytułu ubezpieczenia</li>
+              </ul>
               <p>Przykład pożyczki: Rzeczywista roczna stopa oprocentowania (RRSO) wynosi 23,16 %, całkowita kwota kredytu ( bez kredytowanych kosztów) 1500 zł, całkowita kwota do zapłaty 1659,12 zł, oprocentowanie nominalne zmienne 10 % w skali roku, całkowity koszt kredytu 159,12 zł (w tym: prowizja a udzielenie pożyczki 75 zł – 5%, odsetki 84,12 zł ), 10 miesięcznych rat równych w wysokości po 164,81 zł, rata ostatnia: 164,80 zł.</p>
-              <div id="loan_chart3" class="chart"></div>
             </div>
           </section>
           <section id="loan4">
