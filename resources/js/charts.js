@@ -35,7 +35,47 @@ var charts = [{
         data: [0, 0.017, 0.025, 0.034, 0.042, 0.05, 0.059, 0.067, 0.083, 0.1, 0.11, 0.167, 0.25]
       }]
     }
-  },{
+  }, {
+      chartConfig: {
+        name: 'Lokata progres - wykres oprocentowania',
+        location: 'deposit_chart1',
+        title: {text: 'Lokata progres - wykres oprocentowania'},
+        xAxis: {
+          title: {text: 'Wkład'},
+          labels: {formatter: function() {return this.value+'PLN'}}
+        },
+        yAxis:{
+          title: {text: 'Zarobek'},
+          labels: {formatter: function() {return this.value+'PLN'}}
+        },
+        tooltip: {
+          shared: true,
+          crosshairs: true
+        },
+        series: [{
+          name: 'Lokata 3.5%',
+          data: [{x: 500, y: 503.54},
+          {x: 1500, y: 1510.63},
+          {x: 2000, y: 2014.18},
+          {x: 2500, y: 2517.72},
+          {x: 3000, y: 3021.26},
+          {x: 3500, y: 3524.81},
+          {x: 4000, y: 4028.35},
+          {x: 4500, y: 4531.89},
+          {x: 5000, y: 5035.44},
+          {x: 5500, y: 5538.98},
+          {x: 6000, y: 6042.53},
+          {x: 6500, y: 6546.07},
+          {x: 7000, y: 7049.61},
+          {x: 7500, y: 7553.16},
+          {x: 8000, y: 8056.70},
+          {x: 8500, y: 8560.24},
+          {x: 9000, y: 9063.79},
+          {x: 9500, y: 9567.33},
+          {x: 10000, y: 10070.88}]
+        }]
+      }
+    } ,{
     chart: null,
     calc: {
       chart: null,
