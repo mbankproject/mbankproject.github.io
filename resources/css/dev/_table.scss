@@ -1,0 +1,62 @@
+@import 'config';
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  font-size: 90%;
+  text-align: left;
+  td, th {
+    padding: 15px 4px;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  &.center {
+    text-align: center;
+  }
+  &.border td {
+    border-top: 1px solid $tableBorder;
+    border-right: 1px solid $tableBorder;
+    &:last-of-type {
+      border-right: none;
+    }
+  }
+  &.hover > tbody > tr {
+    transition: all 0.25s ease;
+    &:hover {
+      background: rgba(0, 0, 0, 0.1);
+      transition: all 0.25s ease;
+    }
+  }
+  > {
+    thead > tr:last-of-type {
+      font-weight: bold;
+    }
+    tbody > tr:first-of-type {
+      border-top: 1px solid $tableBorder;
+    }
+  }
+  td {
+    &.good .triangle {
+      border-color: transparent transparent $tableGoodTriangle transparent;
+    }
+    &.bad .triangle {
+      border-width: 26.0px 15px 0 15px;
+      border-color: $tableBadTriangle transparent  transparent;
+    }
+    .triangle {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 15px 26.0px 15px;
+      border-color: transparent transparent #132137 transparent;
+      margin: 0 auto;
+    }
+    &.bad {
+      background: $tableBadBackground;
+    }
+    &.good {
+      background: $tableGoodBackground;
+    }
+  }
+}

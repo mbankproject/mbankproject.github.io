@@ -1,0 +1,119 @@
+@import 'config';
+@import 'font';
+@import 'tip';
+@import 'header';
+@import 'product';
+@import 'table';
+@import 'chart';
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  color: $fontColor;
+  background: $backgroundColor;
+  z-index: 1;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+.logo {
+  font-family: 'Museo-700';
+}
+
+
+.fullImage {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: 'Roboto';
+  font-weight: 300;
+}
+
+section {
+  @each $i in $backgroundedSections {
+    &#s#{$i} {
+      background: $mainDark url('../imgs/section#{$i}.jpg') no-repeat fixed 50% 50% / cover;
+    }
+  }
+}
+
+.middle {
+  width: 80%;
+  max-width: 960px;
+}
+
+section {
+  &#s1 > .middle {
+    text-align: center;
+    > p {
+      font-size: 1.5em;
+    }
+    .logo {
+      font-size: 5em;
+    }
+  }
+  #s2 {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+body > section:nth-of-type(2n) {
+  padding: 2em 0;
+}
+
+
+footer {
+  background: #323232;
+  color: #FFFFFF;
+  box-sizing: border-box;
+  padding: 2em;
+  > p {
+    margin: 0;
+  }
+}
+
+.images {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  > img {
+    min-width: 18em;
+    max-height: 90vh;
+    width: 22%;
+    border: 2px solid #323232;
+    margin: 1em auto;
+  }
+}
+
+
+@keyframes wow {
+  0% {
+    width: 10%;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  50% {
+    width: 150%;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    width: 150%;
+  }
+}
