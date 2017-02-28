@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
       setTimeout(function() {
         item.classList.remove('active');
         window.location.hash = item.getAttribute('href');
+        document.querySelector('[name='+item.getAttribute('data-menu')+']').click();
         document.toggleClass('active', [blackscreen, dropDown, nav, burger]);
       }, 250);
     });
