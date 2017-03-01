@@ -5,6 +5,7 @@
 @import 'product';
 @import 'table';
 @import 'chart';
+@import 'footer';
 
 
 body, html {
@@ -69,17 +70,6 @@ section {
 
 body > section:nth-of-type(2n) {
   padding: 2em 0;
-}
-
-
-footer {
-  background: #323232;
-  color: #FFFFFF;
-  box-sizing: border-box;
-  padding: 2em;
-  > p {
-    margin: 0;
-  }
 }
 
 .images {

@@ -1,0 +1,122 @@
+@import 'config';
+@import 'animate';
+
+$buildWith: (
+  name: 'html5',
+  color: #E44D26
+), (
+  name: 'css3',
+  color: #1572B6
+), (
+  name: 'javascript',
+  color: #F0DB4F
+), (
+  name: 'sass',
+  color: #CF649A
+), (
+  name: 'git',
+  color: #F05033
+);
+
+@keyframes tada {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  10%, 20% {
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%, 50%, 70%, 90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%, 60%, 80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+footer {
+  background: $blankBackground url('../imgs/illusion/use_your_illusion.png') repeat;
+  color: lighten($blankBackground, 25);
+  box-sizing: border-box;
+  padding: 1em 1em 0.5em 1em;
+
+  .footerLogo:hover {
+    color: #FFFFFF;
+    transition: color 0.4s;
+  }
+
+  > #copyright {
+    text-align: center;
+    font-size: 75%;
+  }
+  > .flex {
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    > * {
+      margin: 0.25em auto;
+    }
+    > p {
+      margin: 0;
+    }
+    > .buildWith {
+      font-size: 3em;
+      > i, i:hover {
+        transition: color 0.4s;
+      }
+      @each $object in $buildWith {
+          i.icon-#{map-get($object, 'name')}:hover {
+            color: map-get($object, 'color');
+          }
+      }
+    }
+    .logo {
+      font-size: 2.5em;
+      position: relative;
+      > span {
+        position: absolute;
+        top: 70%;
+        left: 90%;
+        font-size: 50%;
+      }
+    }
+    .toTop {
+      width: 3em;
+      height: 3em;
+      position: relative;
+      &:hover > .arrow {
+        @include bounce;
+        animation-duration: 1s;
+      }
+      > .arrow {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        &:after, &:before {
+            content: '2137';
+            position: absolute;
+            background: lighten($blankBackground, 25);
+            width: 75%;
+            height: 12%;
+            transform: rotate(-45deg);
+            color: transparent;
+        }
+        &:before {
+            top: 50%;
+            left: 35%;
+            transform: rotate(45deg);
+        }
+        &:after {
+          top: 50%;
+          left: -9%;
+        }
+      }
+    }
+  }
+}
