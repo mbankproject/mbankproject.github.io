@@ -168,7 +168,70 @@ var charts = [{
         data: [0, 0.2, 0.4, 1.5]
       }]
     }
-}];
+}, ///tododotododo
+{
+  chart: null,
+  calc: {
+    chart: null,
+    legend: 'Wybierz odpowiednie opcje',
+    elementID: 'deposit_chart2',
+    seriesCount: 0,
+    currentSeries: [],
+    addSeries: function() {
+      console.log('redraw');
+      this.chart.addSeries({
+        name: 'Seria #'+this.seriesCount,
+        data: this.currentSeries
+      }, true);
+      this.chart.redraw();
+      this.seriesCount++;
+    },
+    callback: function(event, other) {
+      console.log(other);
+      other.value=event.target.value;
+      var options = this.predefined;
+      this.chart.series[0].setData([{x: 1, y: Number(other.value)}, {x: 3, y: Number(other.value)*(1+0.0125*(3/365))}]);
+    },
+    inputs: [{
+      name: 'sCapital',
+      title: 'Kapitał',
+      type: 'range',
+      attribs: {
+        min: 500,
+        step: 0.01,
+        max: 10000,
+        value: 2137
+      }
+    }],
+    predefined: {
+      /*interest: [0.002, 0.003, 0.004],*/
+    }
+  },
+  chartConfig: {
+    name: 'Lokata progres - wykres oprocentowania',
+    location: 'deposit_chart4',
+    title: {text: 'Lokata progres - wykres oprocentowania'},
+    xAxis: {
+      title: {text: 'Miesiąc'},
+      labels: {formatter: function() {return this.value+'-miesiąc'}}
+    },
+    yAxis:{
+      title: {text: 'Oprocentowanie'},
+      labels: {formatter: function() {return this.value+' PLN'}}
+    },
+    tooltip: {
+      shared: true,
+      crosshairs: true
+    },
+    series: [{
+      name: 'Aktualna',
+      data: [0, 0.2, 0.4, 1.5]
+    }]
+  }
+}
+
+
+];
 
 /* CONFIG
 var object = {
