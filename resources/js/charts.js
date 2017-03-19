@@ -75,10 +75,234 @@ var charts = [{
         ]
       }
     }, {
+        chartConfig: {
+          name: 'Oprocentowanie lokaty terminowej',
+          chart: {
+            type: 'line'
+          },
+          location: 'deposit_chart3',
+          title: {text: 'Oprocentowanie lokaty terminowej'},
+          xAxis: {
+            title: {text: 'Wiek pojazdu'},
+            labels: {formatter: function() {return this.value+' lat'}}
+          },
+          yAxis:{
+            title: {text: 'Oprocentowanie'},
+            labels: {formatter: function() {return this.value+'%'}}
+          },
+          tooltip: {
+            pointFormat: '{series.name} - <b>{point.y}%</b><br>',
+            shared: true,
+            crosshairs: true
+          },
+          series: [{
+            name: '2-miesięczna',
+            data: (new Array(2)).fill(0).map(function(item, i) {return {x: i+1, y: 0.5}})
+          },{
+            name: '3-miesięczna',
+            data: (new Array(3)).fill(0).map(function(item, i) {return {x: i+1, y: 0.7}})
+            }, {
+              name: '6-miesięczna',
+              data: (new Array(6)).fill(0).map(function(item, i) {return {x: i+1, y: 0.7}})
+            }, {
+              name: '12-miesięczna',
+              data: (new Array(12)).fill(0).map(function(item, i) {return {x: i+1, y: 0.7}})
+            }, {
+              name: '24-miesięczna',
+              data: (new Array(24)).fill(0).map(function(item, i) {return {x: i+1, y: 1}})
+            }
+          ]
+        }
+      }, {
+        chartConfig: {
+          name: 'Oprocentowanie kredytu samochodowego',
+          chart: {
+            type: 'area'
+          },
+          location: 'loan_chart1',
+          title: {text: 'Oprocentowanie kredytu samochodowego'},
+          xAxis: {
+            title: {text: 'Wiek pojazdu'},
+            labels: {formatter: function() {return this.value+' lat'}}
+          },
+          yAxis:{
+            title: {text: 'Oprocentowanie'},
+            labels: {formatter: function() {return this.value+'%'}}
+          },
+          tooltip: {
+            pointFormat: '{series.name} - <b>{point.y}%</b>',
+            shared: true,
+            crosshairs: true
+          },
+          series: [{
+            name: 'nowy',
+            data: [{x: 0, y: 5.39},
+                   {x: 0.99, y: 5.39}]
+          },{
+            name: '1-3 lat',
+            data: [{x: 1, y: 5.39},
+                   {x: 2, y: 5.39},
+                   {x: 3, y: 5.39},
+                   {x: 3.99, y: 5.39}
+                 ]
+            }, {
+              name: '4-6 lat',
+              data: [{x: 4, y: 6.39},
+                     {x: 5, y: 6.39},
+                     {x: 6, y: 6.39},
+                     {x: 6.99, y: 6.39}]
+            },{
+              name: '7-10 lat',
+              data: [{x: 7, y: 7.39},
+                     {x: 8, y: 7.39},
+                     {x: 9, y: 7.39},
+                     {x: 10, y: 7.39}]
+            }
+          ]
+        }
+      }, {
+          chartConfig: {
+            name: 'Wykres kwoty kredytu samochodowego',
+            chart: {
+              type: 'pie',
+              options3d: {
+                enabled: true,
+                alpha: 50,
+                beta: 0
+              }
+            },
+            location: 'loan_chart1_2',
+            title: {text: 'Wykres kwoty kredytu samochodowego'},
+            tooltip: {
+              pointFormat: '{point.y}PLN - <b>{point.percentage:.2f}% całości</b>',
+              shared: true,
+              crosshairs: true
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    depth: 35,
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.name}'
+                    }
+                }
+            },
+            series: [{
+              name: 'Przykład wyliczenia kosztów kredytu',
+              colorByPoint: true,
+              data: [{
+                  name: 'całkowita kwota kredytu (bez kredytowanych kosztów)',
+                  y: 53800
+              }, {
+                  name: 'odsetki',
+                  y: 8515.51
+              }, {
+                  name: 'prowizja za udzielenie kredytu',
+                  y: 3766.00,
+                  sliced: true,
+                  selected: true
+              }]
+          }]
+        }
+      }, {
+          chartConfig: {
+            name: 'Wykres kwoty kredytu gotówkowego',
+            chart: {
+              type: 'pie',
+              options3d: {
+                enabled: true,
+                alpha: 50,
+                beta: 0
+              }
+            },
+            location: 'loan_chart2',
+            title: {text: 'Wykres kwoty kredytu gotówkowego'},
+            tooltip: {
+              pointFormat: '{point.y}PLN - <b>{point.percentage:.2f}% całości</b>',
+              shared: true,
+              crosshairs: true
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    depth: 35,
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.name}'
+                    }
+                }
+            },
+            series: [{
+              name: 'Przykład wyliczenia kosztów kredytu',
+              colorByPoint: true,
+              data: [{
+                  name: 'całkowita kwota kredytu (bez kredytowanych kosztów)',
+                  y: 8800
+              }, {
+                  name: 'odsetki',
+                  y: 1752.82,
+              }, {
+                  name: 'prowizja za udzielenie kredytu',
+                  y: 1319.12,
+                  sliced: true,
+                  selected: true
+              }]
+          }]
+        }
+      }, {
+          chartConfig: {
+            name: 'Wykres mRaty',
+            chart: {
+              type: 'pie',
+              options3d: {
+                enabled: true,
+                alpha: 50,
+                beta: 0
+              }
+            },
+            location: 'loan_chart3',
+            title: {text: 'Wykres kwoty kredytu gotówkowego'},
+            tooltip: {
+              pointFormat: '{point.y}PLN - <b>{point.percentage:.2f}% całości</b>',
+              shared: true,
+              crosshairs: true
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    depth: 35,
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.name}'
+                    }
+                }
+            },
+            series: [{
+              name: 'Przykład wyliczenia kosztów kredytu',
+              colorByPoint: true,
+              data: [{
+                  name: 'całkowita kwota kredytu (bez kredytowanych kosztów)',
+                  y: 1500
+              }, {
+                  name: 'odsetki',
+                  y: 84.12,
+              }, {
+                  name: 'prowizja za udzielenie kredytu',
+                  y: 75,
+                  sliced: true,
+                  selected: true
+              }]
+          }]
+        }
+      }, {
       chartConfig: {
-        name: 'Lokata progres - wykres oprocentowania',
+        name: '3.5% dla nowych klientów',
         location: 'deposit_chart1',
-        title: {text: 'Lokata progres - wykres oprocentowania'},
+        title: {text: '3.5% dla nowych klientów'},
         xAxis: {
           title: {text: 'Wkład'},
           labels: {formatter: function() {return this.value+'PLN'}}
@@ -114,7 +338,53 @@ var charts = [{
           {x: 10000, y: 10070.88}]
         }]
       }
-    } ,{
+    }, {
+    chartConfig: {
+      name: 'Wysokość kapitału do spłaty dla rat stałych',
+      location: 'loan_chart4',
+      title: {text: 'Wysokość kapitału do spłaty dla rat malejących'},
+      xAxis: {
+        title: {text: 'Okres kredytowania'},
+        labels: {formatter: function() {return this.value+'miesiac'}}
+      },
+      yAxis:{
+        title: {text: 'Zarobek'},
+        labels: {formatter: function() {return this.value+'PLN'}}
+      },
+      chart: {
+        type: 'area'
+      },
+      tooltip: {
+        shared: true,
+        crosshairs: true
+      },
+      series: [{
+        name: 'Kwota pozostała do spłacenia',
+        data: [{x: 0, y: 400000.00},
+        {x: 1, y: 398969.40},
+        {x: 12, y: 387374.54},
+        {x: 24, y: 374169.07},
+        {x: 36, y: 360356.95},
+        {x: 48, y: 345910.29},
+        {x: 60, y: 330799.96},
+        {x: 72, y: 314995.47},
+        {x: 84, y: 298464.91},
+        {x: 96, y: 281174.95},
+        {x: 108, y: 263090.69},
+        {x: 120, y: 244175.64},
+        {x: 132, y: 224391.64},
+        {x: 144, y: 203698.76},
+        {x: 156, y: 182055.26},
+        {x: 168, y: 159417.46},
+        {x: 180, y: 135739.68},
+        {x: 192, y: 109740.15},
+        {x: 204, y: 85070.90},
+        {x: 216, y: 57977.65},
+        {x: 228, y: 29639.74},
+        {x: 240, y: 0}]
+      }]
+    }
+  }, {
     chart: null,
     calc: {
       chart: null,
@@ -247,9 +517,9 @@ var charts = [{
     }
   },
   chartConfig: {
-    name: 'Lokata progres - wykres oprocentowania',
+    name: 'Lokata 3-dniowa - wykres oprocentowania',
     location: 'deposit_chart4',
-    title: {text: 'Lokata progres - wykres oprocentowania'},
+    title: {text: 'Lokata 3-dniowa - wykres oprocentowania'},
     xAxis: {
       title: {text: 'Miesiąc'},
       labels: {formatter: function() {return this.value+'-miesiąc'}}
@@ -264,7 +534,7 @@ var charts = [{
     },
     series: [{
       name: 'Aktualna',
-      data: [0, 0.2, 0.4, 1.5]
+      data: [{x: 1, y: 2137}, {x: 3, y: 2137.2195547945203}]
     }]
   }
 }

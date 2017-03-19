@@ -673,10 +673,6 @@ section#s3 {
 section#s5 {
   background: #752122 url("../imgs/section5.jpg") no-repeat fixed 50% 50%/cover; }
 
-.middle {
-  width: 80%;
-  max-width: 960px; }
-
 section#s1 > .middle {
   position: absolute;
   top: 50%;
