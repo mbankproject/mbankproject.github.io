@@ -35,7 +35,46 @@ var charts = [{
         data: [0, 0.017, 0.025, 0.034, 0.042, 0.05, 0.059, 0.067, 0.083, 0.1, 0.11, 0.167, 0.25]
       }]
     }
-  }, {
+  },{
+      chartConfig: {
+        name: 'Oprocentowanie konta oszczędnościowego',
+        chart: {
+          type: 'area'
+        },
+        location: 'other_chart3',
+        title: {text: 'Oprocentowanie konta oszczędnościowego'},
+        xAxis: {
+          title: {text: 'Wkład'},
+          labels: {formatter: function() {return this.value+'PLN'}}
+        },
+        yAxis:{
+          title: {text: 'Oprocentowanie'},
+          labels: {formatter: function() {return this.value+'%'}}
+        },
+        tooltip: {
+          shared: true,
+          crosshairs: true
+        },
+        series: [{
+          name: '0 - 49999.99PLN',
+          data: [{x: 0, y: 0.5},
+                 {x: 49999.99, y: 0.5}]
+        },{
+          name: '50000 - 99999.94PLN',
+          data: [{x: 50000, y: 0.65},
+                 {x: 99999.99, y: 0.65}]
+          }, {
+            name: '100000 - 199999.94PLN',
+            data: [{x: 100000, y: 0.8},
+                   {x: 199999.99, y: 0.8}]
+          },{
+            name: '200000PLN i więcej',
+            data: [{x: 200000, y: 1},
+                   {x: 213700, y: 1}]
+          }
+        ]
+      }
+    }, {
       chartConfig: {
         name: 'Lokata progres - wykres oprocentowania',
         location: 'deposit_chart1',
