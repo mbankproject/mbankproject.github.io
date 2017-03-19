@@ -236,6 +236,19 @@ section.products > .about {
     display: none; }
     section.products > .about > section h3 {
       margin: 0; }
+    section.products > .about > section article:not(:first-of-type) {
+      margin: 75px 0; }
+    section.products > .about > section img {
+      max-width: 100%;
+      border: 2px solid #323232;
+      box-sizing: border-box;
+      margin: 5px auto;
+      display: block;
+      opacity: 0.6;
+      transition: all 0.2s; }
+      section.products > .about > section img:hover {
+        opacity: 1;
+        transition: all 0.2s; }
     section.products > .about > section.active {
       display: block; }
     section.products > .about > section p {

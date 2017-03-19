@@ -69,6 +69,22 @@ section {
           h3 {
             margin: 0;
           }
+          article:not(:first-of-type) {
+            margin: 75px 0;
+          }
+          img {
+            max-width: 100%;
+            border: 2px solid #323232;
+            box-sizing: border-box;
+            margin: 5px auto;
+            display: block;
+            opacity: 0.6;
+            transition: all 0.2s;
+            &:hover {
+              opacity: 1;
+              transition: all 0.2s;
+            }
+          }
           &.active {
             display: block;
           }
