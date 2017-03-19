@@ -654,7 +654,7 @@ a {
 .logo {
   font-family: 'Museo-700'; }
 
-.fullImage {
+body section.fullImage {
   height: 100vh;
   width: 100%;
   display: flex;
@@ -663,6 +663,8 @@ a {
   color: #FFFFFF;
   font-family: 'Roboto';
   font-weight: 300; }
+  body section.fullImage:not(:first-of-type) {
+    height: 80vh; }
 
 section#s1 {
   background: #752122 url("../imgs/section1.jpg") no-repeat fixed 50% 50%/cover; }

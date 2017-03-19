@@ -28,7 +28,7 @@ a {
 }
 
 
-.fullImage {
+body section.fullImage {
   height: 100vh;
   width: 100%;
   display: flex;
@@ -37,6 +37,9 @@ a {
   color: #FFFFFF;
   font-family: 'Roboto';
   font-weight: 300;
+  &:not(:first-of-type) {
+    height: 80vh;
+  }
 }
 
 section {
