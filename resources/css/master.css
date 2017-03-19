@@ -678,6 +678,10 @@ section#s5 {
   max-width: 960px; }
 
 section#s1 > .middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center; }
   section#s1 > .middle > p {
     font-size: 1.5em; }
