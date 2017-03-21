@@ -522,7 +522,7 @@ var charts = [{
     title: {text: 'Lokata 3-dniowa - wykres oprocentowania'},
     xAxis: {
       title: {text: 'Miesiąc'},
-      labels: {formatter: function() {return this.value+'-miesiąc'}}
+      labels: {formatter: function() {return this.value+'-dzień'}}
     },
     yAxis:{
       title: {text: 'Oprocentowanie'},
